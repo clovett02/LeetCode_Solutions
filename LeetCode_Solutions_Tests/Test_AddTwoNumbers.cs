@@ -55,6 +55,12 @@ namespace LeetCode_Solutions_Tests
             string word = "abc";
             Assert.IsTrue("cba" == AddTwoNumbers.ReturnReverseofString(word));
         }
+        [TestMethod]
+        public void Test_ReturnNumOfNodes()
+        {
+            int result = AddTwoNumbers.ReturnNumberOfNodes(Nodes1[0]);
+            Assert.AreEqual(4, result);
+        }
         public string PrintResult(ListNode node)
         {
             string result = "";

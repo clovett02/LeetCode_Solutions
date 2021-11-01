@@ -57,6 +57,20 @@ namespace LeetCode_Solutions
             ListNode result = ReturnStringAsNodeInReverse(stringresult);
             return result;
         }
+        public static int ReturnNumberOfNodes(ListNode node)
+        {
+            int result = 0;
+            while (node != null)
+            {
+                result++;
+                node = node.next;
+            }
+            return result;
+        }
+        public static ListNode ReturnLinkedListInReverse(ListNode node)
+        {
+            
+        }
         public ListNode Solution(ListNode l1, ListNode l2)
         {
 
