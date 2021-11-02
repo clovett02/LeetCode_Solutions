@@ -77,9 +77,12 @@ namespace LeetCode_Solutions_Tests
         {
             AddTwoNumbers funcCaller = new AddTwoNumbers();
             ListNode result = funcCaller.OldSolution(Nodes1[Nodes1.Length - 1], Nodes2[Nodes2.Length - 1]);
+            ListNode result2 = AddTwoNumbers.AddNodes(Nodes1[Nodes1.Length - 1], Nodes2[Nodes2.Length - 1]);
             
             string answer = PrintResult(result);
+            string answer2 = PrintResult(result2);
             Assert.IsTrue("8642" == answer);
+            Assert.IsTrue("8642" == answer2);
         }
     }
 }

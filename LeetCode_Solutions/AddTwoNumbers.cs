@@ -86,6 +86,24 @@ namespace LeetCode_Solutions
             }
             return nodes[nodes.Length - 1];
         }
+        public static ListNode AddNodes(ListNode node1, ListNode node2, int carry = 0)
+        {
+            int num = 0;
+            
+            if(node1 == null && node2 == null) { return null; }
+            if(node1 == null) { num = node2.val + carry; }
+            if(node2 == null) { num = node1.val + carry; }
+            else { num = node1.val + node2.val + carry; }
+                
+            if (num > 9) 
+            { 
+                carry = 1;
+                num -= 10;
+            }
+            else { carry = 0; }
+            
+            return new ListNode(num, AddNodes(node1.next, node2.next, carry));
+        }
         //public ListNode Solution(ListNode l1, ListNode l2)
         //{
 
