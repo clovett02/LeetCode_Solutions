@@ -9,26 +9,46 @@ namespace LeetCode_Solutions_Tests
     {
         ListNode[] Nodes1;
         ListNode[] Nodes2;
-        [TestInitialize]
-        public void Initialize()
-        {
-            Nodes1 = new ListNode[4];
-            Nodes2 = new ListNode[4];
+        ListNode[] Nodes3;
+        ListNode[] Nodes4;
 
-            for (int i = 0; i < Nodes1.Length; i++)
+        public void InitializeNodes(ref ListNode[] nodes, int NumberOfNodes)
+        {
+            nodes = new ListNode[NumberOfNodes];
+            for (int i = 0; i < nodes.Length; i++)
             {
                 if(i == 0)
                 {
-                    Nodes1[i] = new ListNode(i + 1);
-                    Nodes2[i] = new ListNode(i + 1);
+                    nodes[i] = new ListNode(i + 1);
                 }
                 else
                 {
-                    Nodes1[i] = new ListNode(i + 1, Nodes1[i - 1]);
-                    Nodes2[i] = new ListNode(i + 1, Nodes2[i - 1]);
+                    nodes[i] = new ListNode(i + 1, nodes[i - 1]);
                 }
-                
             }
+        }
+        public void InitializeNodesAtValue(ref ListNode[] nodes, int NumberOfNodes, int val)
+        {
+            nodes = new ListNode[NumberOfNodes];
+            for (int i = 0; i < nodes.Length; i++)
+            {
+                if (i == 0)
+                {
+                    nodes[i] = new ListNode(val);
+                }
+                else
+                {
+                    nodes[i] = new ListNode(val, nodes[i - 1]);
+                }
+            }
+        }
+        [TestInitialize]
+        public void Initialize()
+        {
+            InitializeNodes(ref Nodes1, 4);
+            InitializeNodes(ref Nodes2, 4);
+            InitializeNodesAtValue(ref Nodes3, 7, 9);
+            InitializeNodesAtValue(ref Nodes4, 4, 9);
         }
         [TestMethod]
         public void Test_ListNode()
@@ -78,11 +98,19 @@ namespace LeetCode_Solutions_Tests
             AddTwoNumbers funcCaller = new AddTwoNumbers();
             ListNode result = funcCaller.OldSolution(Nodes1[Nodes1.Length - 1], Nodes2[Nodes2.Length - 1]);
             ListNode result2 = AddTwoNumbers.AddNodes(Nodes1[Nodes1.Length - 1], Nodes2[Nodes2.Length - 1]);
-            
+
             string answer = PrintResult(result);
             string answer2 = PrintResult(result2);
             Assert.IsTrue("8642" == answer);
             Assert.IsTrue("8642" == answer2);
+        }
+        [TestMethod]
+        public void Test_Solution2()
+        {
+            ListNode result3 = AddTwoNumbers.AddNodes(Nodes3[Nodes3.Length - 1], Nodes4[Nodes4.Length - 1]);
+
+            string answer3 = PrintResult(result3);
+            Assert.IsTrue("89990001" == answer3);
         }
     }
 }

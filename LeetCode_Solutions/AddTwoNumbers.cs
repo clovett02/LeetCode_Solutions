@@ -90,9 +90,11 @@ namespace LeetCode_Solutions
         {
             int num = 0;
             
-            if(node1 == null && node2 == null) { return null; }
-            if(node1 == null) { num = node2.val + carry; }
-            if(node2 == null) { num = node1.val + carry; }
+            if(node1 == null && node2 == null && carry == 0) { return null; }
+            if (node1 == null && node2 == null) { return new ListNode(carry); }
+            else if (node1 == null) { num = node2.val + carry; }
+            else if(node2 == null) { num = node1.val + carry; }
+            
             else { num = node1.val + node2.val + carry; }
                 
             if (num > 9) 
@@ -101,12 +103,14 @@ namespace LeetCode_Solutions
                 num -= 10;
             }
             else { carry = 0; }
-            
+
+            if (node1 == null) { return new ListNode(num, AddNodes(null, node2.next, carry)); }
+            if (node2 == null) { return new ListNode(num, AddNodes(node1.next, null, carry)); }
             return new ListNode(num, AddNodes(node1.next, node2.next, carry));
         }
-        //public ListNode Solution(ListNode l1, ListNode l2)
-        //{
-
-        //}
+        public ListNode Solution(ListNode l1, ListNode l2)
+        {
+            return AddNodes(l1, l2);
+        }
     }
 }
