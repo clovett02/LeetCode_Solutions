@@ -69,7 +69,22 @@ namespace LeetCode_Solutions
         }
         public static ListNode ReturnLinkedListInReverse(ListNode node)
         {
-            
+            ListNode[] nodes = new ListNode[ReturnNumberOfNodes(node)];
+            ListNode[] result = new ListNode[nodes.Length];
+            for (int i = 0; i < nodes.Length; i++)
+            {
+                if(i == 0)
+                {
+                    nodes[i] = new ListNode(node.val);
+                }
+                else
+                {
+                    nodes[i] = new ListNode(node.val, nodes[i - 1]);
+                }
+                
+                node = node.next;
+            }
+            return nodes[nodes.Length - 1];
         }
         public ListNode Solution(ListNode l1, ListNode l2)
         {
