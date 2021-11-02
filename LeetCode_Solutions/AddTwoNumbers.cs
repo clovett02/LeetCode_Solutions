@@ -86,9 +86,9 @@ namespace LeetCode_Solutions
             }
             return nodes[nodes.Length - 1];
         }
-        public ListNode Solution(ListNode l1, ListNode l2)
-        {
+        //public ListNode Solution(ListNode l1, ListNode l2)
+        //{
 
-        }
+        //}
     }
 }

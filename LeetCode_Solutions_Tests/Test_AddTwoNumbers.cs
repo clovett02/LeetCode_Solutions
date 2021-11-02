@@ -58,7 +58,7 @@ namespace LeetCode_Solutions_Tests
         [TestMethod]
         public void Test_ReturnNumOfNodes()
         {
-            int result = AddTwoNumbers.ReturnNumberOfNodes(Nodes1[0]);
+            int result = AddTwoNumbers.ReturnNumberOfNodes(Nodes1[3]);
             Assert.AreEqual(4, result);
         }
         public string PrintResult(ListNode node)
