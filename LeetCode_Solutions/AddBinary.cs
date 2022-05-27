@@ -1,4 +1,4 @@
-﻿
+﻿using System
 
 namespace LeetCode_Solutions
 {
@@ -14,30 +14,33 @@ namespace LeetCode_Solutions
             }
             return result;
         }
+        public static string AddReversedBinaryStrings(string longernum, string shorternum)
+        {
+            string result = "";
+
+            for (int i = 0; i < longernum.Length; i++)
+            {
+                if(i < shorternum.Length)
+                {
+                    result += Convert.ToString( Convert.ToInt16(shorternum[i]) + Convert.ToInt16(longernum[i]) );
+                }
+                else { result += longernum[i]; }
+            }
+
+            return result;
+        }
         public string Solution(string num1, string num2)
         {
-            
-            string longestnum;
             string result = "";
             if (num1.Length > num2.Length)
             {
-                for(int i = num1.Length - 1; i >= 0; i--)
-                {
-
-                }
+                result = ReverseString(AddReversedBinaryStrings(longernum: num1, shorternum: num2));
             }
             else
             {
-                for (int i = num2.Length - 1; i >= 0; i--)
-                {
-
-                }
+                result = ReverseString(AddReversedBinaryStrings(longernum:num2, shorternum: num1));
             }
 
-            for (int i = num1.Length - 1; i > 0; i++)
-            {
-
-            }
             return result;
         }
     }
