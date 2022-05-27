@@ -42,6 +42,13 @@ namespace LeetCode_Solutions_Tests
             Assert.AreEqual("10101", answer);
         }
         [TestMethod]
+        public void Test_Solution_101111and10()
+        {
+            AddBinary obj = new AddBinary();
+            string answer = obj.Solution("101111", "10");
+            Assert.AreEqual("110001", answer);
+        }
+        [TestMethod]
         public void Test_ReverseString()
         {
             string answer = AddBinary.ReverseString("edcba");

@@ -51,7 +51,9 @@ namespace LeetCode_Solutions
                     {
                         result += "0"; carry = 1;
                     }
-                    else { result += longernum[i]; carry = 0; }
+                    else if(carry == 1 || longernum[i] == '1')
+                    { result += '1'; carry = 0; }
+                    else { result += longernum[i]; }
 
                 }
             }
