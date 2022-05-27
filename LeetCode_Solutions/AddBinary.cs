@@ -43,7 +43,7 @@ namespace LeetCode_Solutions
                         }
                     }
 
-                    else { result += Convert.ToString(carry); }
+                    else { result += Convert.ToString(carry); carry = 0; }
                 }
                 else 
                 {
