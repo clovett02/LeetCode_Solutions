@@ -21,11 +21,17 @@ namespace LeetCode_Solutions
             string result = "";
             if (num1.Length > num2.Length)
             {
-                
+                for(int i = num1.Length - 1; i >= 0; i--)
+                {
+
+                }
             }
             else
             {
+                for (int i = num2.Length - 1; i >= 0; i--)
+                {
 
+                }
             }
 
             for (int i = num1.Length - 1; i > 0; i++)
