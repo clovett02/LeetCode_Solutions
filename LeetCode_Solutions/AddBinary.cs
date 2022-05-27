@@ -22,8 +22,9 @@ namespace LeetCode_Solutions
             {
                 if(i < shorternum.Length)
                 {
-                    int answer = Convert.ToInt16(shorternum[i]) + Convert.ToInt16(longernum[i]);
-                    result += Convert.ToString(answer);
+                    if(longernum[i] == 1 && shorternum[i] == 1) { result += '2'; }
+                    else if (longernum[i] == 1 || shorternum[i] == 1) { result += '1'; }
+                    else { result += '1'; }
                 }
                 else { result += longernum[i]; }
             }
