@@ -24,25 +24,26 @@ namespace LeetCode_Solutions
                 if(i < shorternum.Length)
                 {
                     if(longernum[i] == '1' && shorternum[i] == '1') 
-                    { 
-                        result += '0'; carry = 1; 
+                    {
+                        if(carry == 1) { result += '1'; carry = 1; }
+                        else { result += '0'; carry = 1; }
                     }
                     
-                    else if (longernum[i] == 1 || shorternum[i] == 1) 
-                    
+                    else if (longernum[i] == '1' || shorternum[i] == '1') 
                     {
                         if(carry == 1)
                         {
                             result += '0';
-                            carry = 0;
+                            carry = 1;
                         }
                         else
                         {
                             result += '1';
+                            carry = 0;
                         }
                     }
 
-                    else { result += Convert.ToChar(carry); }
+                    else { result += Convert.ToString(carry); }
                 }
                 else { result += longernum[i]; }
             }
@@ -53,13 +54,15 @@ namespace LeetCode_Solutions
         public string Solution(string num1, string num2)
         {
             string result = "";
+            string num1reversed = ReverseString(num1);
+            string num2reversed = ReverseString(num2);
             if (num1.Length > num2.Length)
             {
-                result = ReverseString(AddReversedBinaryStrings(longernum: num1, shorternum: num2));
+                result = ReverseString(AddReversedBinaryStrings(longernum: num1reversed, shorternum: num2reversed));
             }
             else
             {
-                result = ReverseString(AddReversedBinaryStrings(longernum:num2, shorternum: num1));
+                result = ReverseString(AddReversedBinaryStrings(longernum:num2reversed, shorternum: num1reversed));
             }
 
             return result;
