@@ -45,7 +45,15 @@ namespace LeetCode_Solutions
 
                     else { result += Convert.ToString(carry); }
                 }
-                else { result += longernum[i]; }
+                else 
+                {
+                    if(carry == 1 && longernum[i] == '1')
+                    {
+                        result += "0"; carry = 1;
+                    }
+                    else { result += longernum[i]; carry = 0; }
+
+                }
             }
             if(carry == 1) { result += '1'; }
 
