@@ -7,10 +7,18 @@ namespace LeetCode_Solutions_Tests
     public class Test_AddBinary
     {
         [TestMethod]
-        public void Test_Solution()
+        public void Test_Solution_1and1()
         {
             AddBinary obj = new AddBinary();
             string answer = obj.Solution("1", "1");
+            Assert.AreEqual("10", answer);
+        }
+        [TestMethod]
+        public void Test_Solution_10and01()
+        {
+            AddBinary obj = new AddBinary();
+            string answer = obj.Solution("10", "01");
+            Assert.AreEqual("11", answer);
         }
         [TestMethod]
         public void Test_ReverseString()
