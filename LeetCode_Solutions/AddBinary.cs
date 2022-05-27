@@ -17,17 +17,36 @@ namespace LeetCode_Solutions
         public static string AddReversedBinaryStrings(string longernum, string shorternum)
         {
             string result = "";
+            int carry = 0;
 
             for (int i = 0; i < longernum.Length; i++)
             {
                 if(i < shorternum.Length)
                 {
-                    if(longernum[i] == 1 && shorternum[i] == 1) { result += '2'; }
-                    else if (longernum[i] == 1 || shorternum[i] == 1) { result += '1'; }
-                    else { result += '1'; }
+                    if(longernum[i] == '1' && shorternum[i] == '1') 
+                    { 
+                        result += '0'; carry = 1; 
+                    }
+                    
+                    else if (longernum[i] == 1 || shorternum[i] == 1) 
+                    
+                    {
+                        if(carry == 1)
+                        {
+                            result += '0';
+                            carry = 0;
+                        }
+                        else
+                        {
+                            result += '1';
+                        }
+                    }
+
+                    else { result += Convert.ToChar(carry); }
                 }
                 else { result += longernum[i]; }
             }
+            if(carry == 1) { result += '1'; }
 
             return result;
         }
