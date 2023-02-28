@@ -8,7 +8,7 @@ namespace LeetCode_Solutions_Tests
     public class Test_fib
     {
         [TestMethod]
-        public void Test_Solution()
+        public void Test_fib_Solution()
         {
             Assert.AreEqual(1, fib.solution(1));
             Assert.AreEqual(1, fib.solution(2));

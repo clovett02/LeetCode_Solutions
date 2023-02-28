@@ -6,6 +6,7 @@ namespace LeetCode_Solutions_Tests
     [TestClass]
     public class Test_RomantoInteger
     {
+        [TestMethod]
         public void Test_RomanetoInteger_Solution()
         {
             Assert.AreEqual(RomantoInteger.solution("I"), 1);
