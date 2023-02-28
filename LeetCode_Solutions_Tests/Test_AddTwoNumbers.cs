@@ -51,7 +51,7 @@ namespace LeetCode_Solutions_Tests
             InitializeNodesAtValue(ref Nodes4, 4, 9);
         }
         [TestMethod]
-        public void Test_ListNode()
+        public void Test_AddTwoNumbers_ListNode()
         {
             ListNode node2 = new ListNode(3);
             ListNode node1 = new ListNode(1, node2);
@@ -76,7 +76,7 @@ namespace LeetCode_Solutions_Tests
             Assert.IsTrue("cba" == AddTwoNumbers.ReturnReverseofString(word));
         }
         [TestMethod]
-        public void Test_ReturnNumOfNodes()
+        public void Test_AddTwoNumbers_ReturnNumOfNodes()
         {
             int result = AddTwoNumbers.ReturnNumberOfNodes(Nodes1[3]);
             Assert.AreEqual(4, result);
@@ -93,7 +93,7 @@ namespace LeetCode_Solutions_Tests
             return result;
         }
         [TestMethod]
-        public void Test_Solution()
+        public void Test_AddTwoNumbers_Solution()
         {
             AddTwoNumbers funcCaller = new AddTwoNumbers();
             ListNode result = funcCaller.OldSolution(Nodes1[Nodes1.Length - 1], Nodes2[Nodes2.Length - 1]);
@@ -105,7 +105,7 @@ namespace LeetCode_Solutions_Tests
             Assert.IsTrue("8642" == answer2);
         }
         [TestMethod]
-        public void Test_Solution2()
+        public void Test_AddTwoNumbers_Solution2()
         {
             ListNode result3 = AddTwoNumbers.AddNodes(Nodes3[Nodes3.Length - 1], Nodes4[Nodes4.Length - 1]);
 
