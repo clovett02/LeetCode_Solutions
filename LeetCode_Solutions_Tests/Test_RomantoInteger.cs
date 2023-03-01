@@ -9,8 +9,8 @@ namespace LeetCode_Solutions_Tests
         [TestMethod]
         public void Test_RomanetoInteger_Solution()
         {
-            Assert.AreEqual(RomantoInteger.solution("I"), 1);
-            Assert.AreEqual(RomantoInteger.solution("II"), 2);
+            Assert.AreEqual(1, RomantoInteger.solution("I"));
+            Assert.AreEqual(2, RomantoInteger.solution("II"));
         }
     }
     
