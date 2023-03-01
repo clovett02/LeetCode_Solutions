@@ -11,6 +11,12 @@ namespace LeetCode_Solutions_Tests
         {
             Assert.AreEqual(1, RomantoInteger.solution("I"));
             Assert.AreEqual(2, RomantoInteger.solution("II"));
+            Assert.AreEqual(4, RomantoInteger.solution("IV"));
+        }
+        [TestMethod]
+        public void Test_RomantoInteger_ReturnNumberforChar()
+        {
+            Assert.AreEqual(1, RomantoInteger.ReturnNumberforChar('I'));
         }
     }
     

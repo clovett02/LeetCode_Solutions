@@ -23,12 +23,15 @@ namespace LeetCode_Solutions
                 {
                     numbers[i] = 0 - numbers[i];
                 }
+            }
+            for (int i = 0; i < numbers.Length; i++)
+            {
                 answer += numbers[i];
             }
 
             return answer;
         }
-        private static int ReturnNumberforChar(char c)
+        public static int ReturnNumberforChar(char c)
         {
             int answer = 0;
             switch (c)
