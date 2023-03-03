@@ -7,7 +7,7 @@ namespace LeetCode_Solutions_Tests
     public class Test_RomantoInteger
     {
         [TestMethod]
-        public void Test_RomanetoInteger_Solution()
+        public void Test_RomantoInteger_Solution()
         {
             Assert.AreEqual(1, RomantoInteger.solution("I"));
             Assert.AreEqual(2, RomantoInteger.solution("II"));
@@ -17,6 +17,7 @@ namespace LeetCode_Solutions_Tests
         public void Test_RomantoInteger_ReturnNumberforChar()
         {
             Assert.AreEqual(1, RomantoInteger.ReturnNumberforChar('I'));
+            Assert.AreEqual(5, RomantoInteger.ReturnNumberforChar('V'));
         }
     }
     
