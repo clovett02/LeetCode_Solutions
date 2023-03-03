@@ -10,21 +10,27 @@ namespace LeetCode_Solutions_Tests
         [TestMethod]
         public void Test_LongestPalindromicSubstring_Solution()
         {
-            Assert.AreEqual("bob", LongestPalindromicSubstring.Solution("kabob"));
-            Assert.AreEqual("babad", LongestPalindromicSubstring.Solution("bab"));
+            LongestPalindromicSubstring Palindrome = new LongestPalindromicSubstring();
+            Assert.AreEqual("bob", Palindrome.Solution("kabob"));
+            Assert.AreEqual("bab", Palindrome.Solution("babad"));
+            Assert.AreEqual("baaaaaaab", Palindrome.Solution("dcbaaaaaaabd"));
+            Assert.AreEqual("bb", Palindrome.Solution("bb"));
+            Assert.AreEqual("bb", Palindrome.Solution("abb"));
         }
         [TestMethod]
         public void Test_LongestPalindromicSubstring_ReturnSubstring()
         {
-            Assert.AreEqual("abcde", LongestPalindromicSubstring.ReturnSubstring("abcde", 0, 4));
-            Assert.AreEqual("abcde", LongestPalindromicSubstring.ReturnSubstring("abcdef", 0, 4));
-            Assert.AreEqual("bcdef", LongestPalindromicSubstring.ReturnSubstring("abcdefg", 1, 5));
+            LongestPalindromicSubstring Palindrome = new LongestPalindromicSubstring();
+            Assert.AreEqual("abcde", Palindrome.ReturnSubstring("abcde", 0, 4));
+            Assert.AreEqual("abcde", Palindrome.ReturnSubstring("abcdef", 0, 4));
+            Assert.AreEqual("bcdef", Palindrome.ReturnSubstring("abcdefg", 1, 5));
         }
         [TestMethod]
         public void Test_Palindromic()
         {
-            Assert.AreEqual(true, LongestPalindromicSubstring.Palindromic("aba"));
-            Assert.AreEqual(false, LongestPalindromicSubstring.Palindromic("abb"));
+            LongestPalindromicSubstring Palindrome = new LongestPalindromicSubstring();
+            Assert.AreEqual(true, Palindrome.Palindromic("aba"));
+            Assert.AreEqual(false, Palindrome.Palindromic("abb"));
         }
     }
 }
