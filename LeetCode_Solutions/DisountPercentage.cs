@@ -16,7 +16,6 @@ namespace LeetCode_Solutions
                 case var expression when 0 < orderTotal &&  orderTotal < 10000.0f:
                     result = 0.05f;
                     break;
-                case var expression when 10000 <= orderTotal
             }
             return result;
         }
