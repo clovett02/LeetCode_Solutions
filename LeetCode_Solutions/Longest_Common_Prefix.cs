@@ -12,15 +12,30 @@ namespace LeetCode_Solutions
         /// <returns></returns>
         public static string Solution(string[] input)
         {
+            string defaultresponse = "There is no common prefix among the input strings.";
+            if( input.Length <= 1 ){ return defaultresponse; }
+            if( input[0][0] != input[1][0] ){ return defaultresponse; }
+            
             string result = "";
+            int shortestword = ShortestWord(input);
 
-            //word loop
-            for (int i = 0; i < input.Length; i++)
+            //char loop
+            for (int i = 0; i < shortestword; i++)
             {
-                int shortestword = ShortestWord(input);
-
-                //char loop
-
+                bool match = true;
+                char tempchar = input[0][i];
+                //word loop
+                for (int j = 1; j < input.Length; j++)
+                {
+                    if( tempchar != input[j][i] ) 
+                    { 
+                        match = false;
+                        break;
+                    }
+                }
+                
+                if( match ) { result += tempchar; }
+                else { break; }
                 
             }
 
