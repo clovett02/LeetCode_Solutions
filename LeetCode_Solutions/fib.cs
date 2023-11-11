@@ -7,7 +7,7 @@ namespace LeetCode_Solutions
     /// <summary>
     /// Class for solving fibonacci sequence
     /// </summary>
-    public class fib
+    public class Fib
     {
         public static int solution(int n)
         {
