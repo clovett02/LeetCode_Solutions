@@ -1,0 +1,6 @@
+stages:
+  - test
+test-solutions:
+  stage: test
+  script:
+    - dotnet test .\LeetCode_Solutions_Tests\LeetCode_Solutions_Tests.csproj
