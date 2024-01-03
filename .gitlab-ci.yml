@@ -1,7 +1,7 @@
-image: microsoft/dotnet:latest
 stages:
   - test
 test-solutions:
+  image: microsoft/dotnet:latest
   stage: test
   script:
     - dotnet test .\LeetCode_Solutions_Tests\LeetCode_Solutions_Tests.csproj
