@@ -4,5 +4,7 @@ stages:
   - test
 test-solutions:  
   stage: test
+  tags:
+    - dotnet
   script:
     - dotnet test .\LeetCode_Solutions_Tests\LeetCode_Solutions_Tests.csproj
