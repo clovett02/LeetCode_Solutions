@@ -12,7 +12,12 @@ namespace LeetCode_Solutions
         /// <summary>
         /// This solution takes a string and returns what the string would be
         /// if printed in a zigzag pattern. The return string returns how it 
-        /// would be read from left to right, from row 0 to n.
+        /// would be read from left to right, from row 0 to n.<br/>
+        /// ('abcde', 3) would print:<br/>
+        /// a e<br/>
+        /// b d<br/>
+        /// c<br/>
+        ///**Except add one more space to the 1st line between 'a' and 'e'
         /// </summary>
         /// <param name="word"></param>
         /// <param name="rows"></param>
@@ -47,7 +52,13 @@ namespace LeetCode_Solutions
 
             return answer;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="word"></param>
+        /// <param name="numrows"></param>
+        /// <param name="numcolumns"></param>
+        /// <returns></returns>
         public string[,] Return2DArray(string word, int numrows, int numcolumns)
         {
             string[,] result = new string[numrows, numcolumns];
