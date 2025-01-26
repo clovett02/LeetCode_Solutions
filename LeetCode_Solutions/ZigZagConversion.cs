@@ -53,28 +53,15 @@ namespace LeetCode_Solutions
 
             return answer;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="word"></param>
-        /// <param name="numrows"></param>
-        /// <param name="numcolumns"></param>
-        /// <returns></returns>
-        public string[,] Return2DArray(string word, int numrows, int numcolumns)
-        {
-            string[,] result = new string[numrows, numcolumns];
-
-            return result;
-        }
-
-        public int ReturnColumnsBetween(int rows)
-        { 
-            int result = rows - 2;
-            if ( result <= 0){ return 0; }
-            else { return result; }
-        }
         public int ReturnNumberofColumns(string word, int rows)
         {
+            int ReturnColumnsBetween(int rows)
+            { 
+                int result = rows - 2;
+                if ( result <= 0){ return 0; }
+                else { return result; }
+             }
+
             if (word.Length <= rows) { return 1; }
 
             int columnsbetween = ReturnColumnsBetween(rows);
@@ -83,48 +70,13 @@ namespace LeetCode_Solutions
 
             int colsLeft = (word.Length % (rows + columnsbetween));
 
-            int result = (int)Math.Ceiling();
+            int fulliterations = (int)Math.Floor((double) word.Length / (rows + columnsbetween));
 
-            if(columnsbetween <= 0)
-            {
-                Console.WriteLine($"Word Length: {word.Length}\n # Rows: {rows}\n Result: {result}");
-                return  result;
-            }
-            else
-            {
-                return result + (columnsbetween * result);
-            }
+            int result = (fulliterations * (columnsbetween + 1)) + colsLeft;
+
+            Console.WriteLine($"Word Length: {word.Length}\n # Rows: {rows}\n Result: {result}");
+            return  result;
         }
 
-        // public int ReturnNumberofColumns(string word, int rows)
-        // {
-        //     int result = 0;
-        //     // if (word.Length > 0) { result = 1; }
-        //     int i = 0, j = 0;
-        //     while(i < word.Length)
-        //     {
-        //         j = 0;
-        //         result++;
-        //         while (j < rows && i < word.Length)
-        //         {
-        //             i++;
-        //             j++;
-        //         }
-                
-        //         j -= 2;
-        //         while(j > 0 && i < word.Length)
-        //         {
-        //             i++;
-        //             j--;
-        //             if(j > 0) { result++; }
-        //         }
-        //     }
-
-        //     return result;
-        // }
     }
 }
-
-
-/// 5 chars 2 rows means 3 columns
-/// 5 chars 3 rows means 2 columns
