@@ -14,7 +14,8 @@ namespace LeetCode_Solutions_Tests
         [TestMethod]
         public void Test_ZigZagConversion_Solution()
         {
-            // Assert.AreEqual("pahnaplsiigyir", zigzag.Solution("paypalishiring", 3));
+            zigzag.Solution("paypalishiring", 3);
+            Assert.AreEqual("pahnaplsiigyir", zigzag.Solution("paypalishiring", 3));
         }
         [TestMethod]
         public void Test_ZigZagConversion_ReturnNumberofColumns()

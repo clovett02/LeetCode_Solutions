@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.XPath;
 
 namespace LeetCode_Solutions
 {
@@ -20,34 +14,42 @@ namespace LeetCode_Solutions
         /// c<br/>
         ///**Except add one more space to the 1st line between 'a' and 'e'
         /// </summary>
-        /// <param name="word"></param>
-        /// <param name="rows"></param>
+        /// <param name="s"></param>
+        /// <param name="numRows"></param>
         /// <returns></returns>
-        public string Solution(string word, int rows)
+        public string Solution(string s, int numRows)
         {
             string answer = "";
-            string[,] array_answer = new string[rows, this.ReturnNumberofColumns(word, rows)];
+            string[,] array_answer = new string[numRows, this.ReturnNumberofColumns(s, numRows)];
             int i = 0; //tracks word index
             int j = 0; //tracks row index
             int k = 0; //tracks column index
 
-            while (i < word.Length)
+            while (i < s.Length)
             {
                 j = 0;
-                while (j <= rows && i < word.Length)
+                while (j < numRows && i < s.Length)
                 {
-                    array_answer[j, k] = word[i].ToString();
+                    array_answer[j, k] = s[i].ToString();
                     i++;
                     j++;
                 }
-                j -= 2;
+                j-=2;
                 k++;
-                while (j > 0)
+                while (j > 0 && i < s.Length)
                 {
-                    array_answer[j, k] = word[i].ToString();
+                    array_answer[j, k] = s[i].ToString();
                     i++;
                     j--;
                     k++;
+                }
+            }
+
+            for (int l = 0; l < array_answer.GetLength(0); l++)
+            {
+                for (int m = 0; m < array_answer.GetLength(1); m++)
+                {
+                    answer+= array_answer[l,m];
                 }
             }
 
